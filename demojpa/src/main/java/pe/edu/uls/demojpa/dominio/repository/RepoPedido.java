@@ -48,5 +48,5 @@ public interface RepoPedido extends JpaRepository<Pedido, Integer> {
     WHERE p.id = :pedidoId
     GROUP BY p.id
     """, nativeQuery = true)
-    Object[] obtenerCantidadItemsPorPedidoId(@Param ("pedidoId") int pedidoId);
+    Object[] obtenerCantidadItemsPorPedidoId(@Param("pedidoId") int pedidoId);
 }

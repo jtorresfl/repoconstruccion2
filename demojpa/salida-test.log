@@ -1,0 +1,268 @@
+Initialized native services in: /home/vscode/.gradle/native
+Initialized jansi services in: /home/vscode/.gradle/native
+The client will now receive all logging from the daemon (pid: 5355). The daemon log file: /home/vscode/.gradle/daemon/9.7.1/daemon-5355.out.log
+Starting 20th build in daemon [uptime: 36 mins 55.247 secs, performance: 100%, GC rate: 0.00/s, heap usage: 0% of 512 MiB, non-heap usage: 23% of 384 MiB]
+Using 2 worker leases.
+Operational build model parameters: {cachingModelBuilding=false, configurationCache=false, configurationCacheDisabledReason=null, configurationCacheParallelLoad=false, configurationCacheParallelStore=false, configureOnDemand=false, invalidateCoupledProjects=false, isolatedProjects=false, isolatedProjectsDiagnostics=false, isolatedProjectsDangerouslyIgnoreProblems=false, modelAsProjectDependency=false, modelBuilding=false, parallelModelBuilding=false, parallelProjectConfiguration=false, parallelProjectExecution=false, vintage=true}
+Not watching /workspaces/repoconstruccion2/demojpa since the file system is not supported
+Watching the file system is configured to be enabled if available
+File system watching is active
+Starting Build
+Settings evaluated using settings file '/workspaces/repoconstruccion2/demojpa/settings.gradle'.
+Projects loaded. Root project using build file '/workspaces/repoconstruccion2/demojpa/build.gradle'.
+Included projects: [root project 'demojpa']
+
+> Configure project :
+Evaluating root project 'demojpa' using build file '/workspaces/repoconstruccion2/demojpa/build.gradle'.
+Resolved plugin [id: 'java']
+Resolved plugin [id: 'org.springframework.boot', version: '4.1.1']
+Resolved plugin [id: 'io.spring.dependency-management', version: '1.1.7']
+Applying dependency management to configuration 'annotationProcessor' in project 'demojpa'
+Applying dependency management to configuration 'apiElements' in project 'demojpa'
+Applying dependency management to configuration 'archives' in project 'demojpa'
+Applying dependency management to configuration 'bootArchives' in project 'demojpa'
+Applying dependency management to configuration 'compileClasspath' in project 'demojpa'
+Applying dependency management to configuration 'compileOnly' in project 'demojpa'
+Applying dependency management to configuration 'default' in project 'demojpa'
+Applying dependency management to configuration 'developmentOnly' in project 'demojpa'
+Applying dependency management to configuration 'implementation' in project 'demojpa'
+Applying dependency management to configuration 'mainSourceElements' in project 'demojpa'
+Applying dependency management to configuration 'productionRuntimeClasspath' in project 'demojpa'
+Applying dependency management to configuration 'runtimeClasspath' in project 'demojpa'
+Applying dependency management to configuration 'runtimeElements' in project 'demojpa'
+Applying dependency management to configuration 'runtimeOnly' in project 'demojpa'
+Applying dependency management to configuration 'testAndDevelopmentOnly' in project 'demojpa'
+Applying dependency management to configuration 'testAnnotationProcessor' in project 'demojpa'
+Applying dependency management to configuration 'testCompileClasspath' in project 'demojpa'
+Applying dependency management to configuration 'testCompileOnly' in project 'demojpa'
+Applying dependency management to configuration 'testImplementation' in project 'demojpa'
+Applying dependency management to configuration 'testResultsElementsForTest' in project 'demojpa'
+Applying dependency management to configuration 'testRuntimeClasspath' in project 'demojpa'
+Applying dependency management to configuration 'testRuntimeOnly' in project 'demojpa'
+All projects evaluated.
+Task name matched 'test'
+Selected primary task 'test' from project :
+Resolving global dependency management for project 'demojpa'
+Excluding []
+Excluding []
+Excluding []
+Excluding []
+Excluding []
+Excluding []
+Tasks to be executed: [task ':compileJava', task ':processResources', task ':classes', task ':compileTestJava', task ':processTestResources', task ':testClasses', task ':test']
+Tasks that were excluded: []
+Resolve mutations for :compileJava (Thread[#594,included builds,5,main]) started.
+:compileJava (Thread[#594,included builds,5,main]) started.
+
+> Task :compileJava UP-TO-DATE
+Custom actions are attached to task ':compileJava'.
+Caching disabled for task ':compileJava' because:
+  Build cache is disabled
+Skipping task ':compileJava' as it is up-to-date.
+Resolve mutations for :processResources (Thread[#594,included builds,5,main]) started.
+:processResources (Thread[#594,included builds,5,main]) started.
+
+> Task :processResources UP-TO-DATE
+Caching disabled for task ':processResources' because:
+  Build cache is disabled
+  Not worth caching
+Skipping task ':processResources' as it is up-to-date.
+Resolve mutations for :classes (Thread[#594,included builds,5,main]) started.
+:classes (Thread[#594,included builds,5,main]) started.
+
+> Task :classes UP-TO-DATE
+Skipping task ':classes' as it has no actions.
+Resolve mutations for :compileTestJava (Thread[#594,included builds,5,main]) started.
+:compileTestJava (Thread[#594,included builds,5,main]) started.
+
+> Task :compileTestJava
+Custom actions are attached to task ':compileTestJava'.
+Caching disabled for task ':compileTestJava' because:
+  Build cache is disabled
+Task ':compileTestJava' is not up-to-date because:
+  Input property 'stableSources' file /workspaces/repoconstruccion2/demojpa/src/test/java/pe/edu/uls/demojpa/TestPedido.java has changed.
+Compilation mode: in-process compilation
+Created classpath snapshot for incremental compilation in 0.022 secs.
+Compiling with toolchain '/usr/lib/jvm/msopenjdk-current'.
+Compiling with JDK Java compiler API.
+Incremental compilation of 2 classes completed in 0.427 secs.
+Class dependency analysis for incremental compilation took 0.003 secs.
+Resolve mutations for :processTestResources (Thread[#595,Execution worker,5,main]) started.
+:processTestResources (Thread[#595,Execution worker,5,main]) started.
+
+> Task :processTestResources NO-SOURCE
+Skipping task ':processTestResources' as it has no source files and no previous output files.
+Resolve mutations for :testClasses (Thread[#595,Execution worker,5,main]) started.
+:testClasses (Thread[#595,Execution worker,5,main]) started.
+
+> Task :testClasses
+Skipping task ':testClasses' as it has no actions.
+Resolve mutations for :test (Thread[#595,Execution worker,5,main]) started.
+:test (Thread[#594,included builds,5,main]) started.
+Gradle Test Executor 12 started executing tests.
+
+> Task :test
+Caching disabled for task ':test' because:
+  Build cache is disabled
+Task ':test' is not up-to-date because:
+  Task has failed previously.
+Starting process 'Gradle Test Executor 12'. Working directory: /workspaces/repoconstruccion2/demojpa Command: /usr/lib/jvm/msopenjdk-current/bin/java -Dorg.gradle.internal.worker.tmpdir=/workspaces/repoconstruccion2/demojpa/build/tmp/test/work @/home/vscode/.gradle/.tmp/gradle-worker-classpath11911776509390914264txt -Xmx512m -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -ea worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Test Executor 12'
+Successfully started process 'Gradle Test Executor 12'
+
+TestPedido STANDARD_OUT
+    22:54:07.337 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [pe.edu.uls.demojpa.TestPedido]: TestPedido does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+    22:54:07.771 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration pe.edu.uls.demojpa.DemojpaApplication for test class pe.edu.uls.demojpa.TestPedido
+    22:54:07.907 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [pe.edu.uls.demojpa.TestPedido]: TestPedido does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+    22:54:07.913 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration pe.edu.uls.demojpa.DemojpaApplication for test class pe.edu.uls.demojpa.TestPedido
+
+      .   ____          _            __ _ _
+     /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+    ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+     \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+      '  |____| .__|_| |_|_| |_\__, | / / / /
+     =========|_|==============|___/=/_/_/_/
+
+     :: Spring Boot ::                (v4.1.1)
+
+    2026-10-16T22:54:08.546Z  INFO 29543 --- [demojpa] [    Test worker] pe.edu.uls.demojpa.TestPedido            : Starting TestPedido using Java 25.0.4.1 with PID 29543 (started by vscode in /workspaces/repoconstruccion2/demojpa)
+    2026-10-16T22:54:08.551Z  INFO 29543 --- [demojpa] [    Test worker] pe.edu.uls.demojpa.TestPedido            : No active profile set, falling back to 1 default profile: "default"
+    2026-10-16T22:54:09.582Z  INFO 29543 --- [demojpa] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+    2026-10-16T22:54:09.660Z  INFO 29543 --- [demojpa] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 66 ms. Found 4 JPA repository interfaces.
+    2026-10-16T22:54:10.514Z  INFO 29543 --- [demojpa] [    Test worker] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 0 (http)
+    2026-10-16T22:54:10.533Z  INFO 29543 --- [demojpa] [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+    2026-10-16T22:54:10.534Z  INFO 29543 --- [demojpa] [    Test worker] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+    2026-10-16T22:54:10.588Z  INFO 29543 --- [demojpa] [    Test worker] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1989 ms
+    2026-10-16T22:54:10.842Z  INFO 29543 --- [demojpa] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+    2026-10-16T22:54:11.423Z  INFO 29543 --- [demojpa] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@246df37b
+    2026-10-16T22:54:11.425Z  INFO 29543 --- [demojpa] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+    2026-10-16T22:54:11.466Z  INFO 29543 --- [demojpa] [    Test worker] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+    2026-10-16T22:54:11.528Z  INFO 29543 --- [demojpa] [    Test worker] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
+    2026-10-16T22:54:12.034Z  INFO 29543 --- [demojpa] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+    2026-10-16T22:54:12.220Z  INFO 29543 --- [demojpa] [    Test worker] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+    	Database JDBC URL [jdbc:postgresql://ep-fancy-breeze-amz7icm0-pooler.c-5.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require]
+    	Database driver: PostgreSQL JDBC Driver
+    	Database dialect: PostgreSQLDialect
+    	Database version: 17.11
+    	Default catalog/schema: neondb/public
+    	Autocommit mode: undefined/unknown
+    	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+    	JDBC fetch size: none
+    	Pool: DataSourceConnectionProvider
+    	Minimum pool size: undefined/unknown
+    	Maximum pool size: undefined/unknown
+    2026-10-16T22:54:13.544Z  INFO 29543 --- [demojpa] [    Test worker] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+    2026-10-16T22:54:13.559Z  INFO 29543 --- [demojpa] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+    2026-10-16T22:54:13.693Z  INFO 29543 --- [demojpa] [    Test worker] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+    2026-10-16T22:54:14.948Z  WARN 29543 --- [demojpa] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+    2026-10-16T22:54:15.640Z  INFO 29543 --- [demojpa] [    Test worker] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 44245 (http) with context path '/'
+    2026-10-16T22:54:15.652Z  INFO 29543 --- [demojpa] [    Test worker] pe.edu.uls.demojpa.TestPedido            : Started TestPedido in 7.615 seconds (process running for 10.071)
+
+TestPedido > Debe guardar solo uno de dos pedido STANDARD_ERROR
+    Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+    WARNING: A Java agent has been loaded dynamically (/home/vscode/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.18.11/82212e5b3633e7a65fca8bec525762cfb6c9bae4/byte-buddy-agent-1.18.11.jar)
+    WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+    WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+    WARNING: Dynamic loading of agents will be disallowed by default in a future release
+
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+
+> Task :test
+
+TestPedido > Debe guardar solo uno de dos pedido STANDARD_OUT
+    Producto creado con ID 1132
+    2026-10-16T22:54:16.622Z  INFO 29543 --- [demojpa] [o-auto-1-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+    2026-10-16T22:54:16.624Z  INFO 29543 --- [demojpa] [o-auto-1-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+    2026-10-16T22:54:16.629Z  INFO 29543 --- [demojpa] [o-auto-1-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+    1792191256723 INICIO http-nio-auto-1-exec-2
+    1792191256860 DESPUES DE FIND http-nio-auto-1-exec-2 stock=2
+    1792191258865 DESPUES DE SLEEP http-nio-auto-1-exec-2
+    1792191260901 INICIO http-nio-auto-1-exec-1
+    Pedido registrado con ID:1265
+    1792191260943 DESPUES DE FIND http-nio-auto-1-exec-1 stock=0
+    1792191262944 DESPUES DE SLEEP http-nio-auto-1-exec-1
+
+TestPedido > Test ficticio: Debe guardar dos pedidos STANDARD_OUT
+    Producto creado con ID 1133
+    1792191263044 INICIO http-nio-auto-1-exec-3
+    1792191263054 DESPUES DE FIND http-nio-auto-1-exec-3 stock=2
+    1792191265054 DESPUES DE SLEEP http-nio-auto-1-exec-3
+    1792191265108 INICIO http-nio-auto-1-exec-4
+    Pedido registrado con ID:1266
+    1792191265117 DESPUES DE FIND http-nio-auto-1-exec-4 stock=0
+    1792191267117 DESPUES DE SLEEP http-nio-auto-1-exec-4
+
+TestPedido > Test ficticio: Debe guardar dos pedidos FAILED
+    org.opentest4j.AssertionFailedError: 
+    Expecting value to be true but was false
+        at app//pe.edu.uls.demojpa.TestPedido.testRegistrarPedidoConcurrenteRealSinLock(TestPedido.java:138)
+
+DemojpaApplicationTests STANDARD_OUT
+    2026-10-16T22:54:27.160Z  INFO 29543 --- [demojpa] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [pe.edu.uls.demojpa.DemojpaApplicationTests]: DemojpaApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+    2026-10-16T22:54:27.164Z  INFO 29543 --- [demojpa] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration pe.edu.uls.demojpa.DemojpaApplication for test class pe.edu.uls.demojpa.DemojpaApplicationTests
+    2026-10-16T22:54:27.165Z  INFO 29543 --- [demojpa] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [pe.edu.uls.demojpa.DemojpaApplicationTests]: DemojpaApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+    2026-10-16T22:54:27.168Z  INFO 29543 --- [demojpa] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration pe.edu.uls.demojpa.DemojpaApplication for test class pe.edu.uls.demojpa.DemojpaApplicationTests
+
+      .   ____          _            __ _ _
+     /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+    ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+     \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+      '  |____| .__|_| |_|_| |_\__, | / / / /
+     =========|_|==============|___/=/_/_/_/
+
+     :: Spring Boot ::                (v4.1.1)
+
+    2026-10-16T22:54:27.221Z  INFO 29543 --- [demojpa] [    Test worker] p.e.uls.demojpa.DemojpaApplicationTests  : Starting DemojpaApplicationTests using Java 25.0.4.1 with PID 29543 (started by vscode in /workspaces/repoconstruccion2/demojpa)
+    2026-10-16T22:54:27.222Z  INFO 29543 --- [demojpa] [    Test worker] p.e.uls.demojpa.DemojpaApplicationTests  : No active profile set, falling back to 1 default profile: "default"
+    2026-10-16T22:54:27.438Z  INFO 29543 --- [demojpa] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+    2026-10-16T22:54:27.468Z  INFO 29543 --- [demojpa] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 4 JPA repository interfaces.
+    2026-10-16T22:54:27.564Z  INFO 29543 --- [demojpa] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+    2026-10-16T22:54:27.703Z  INFO 29543 --- [demojpa] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@10990a32
+    2026-10-16T22:54:27.704Z  INFO 29543 --- [demojpa] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+    2026-10-16T22:54:27.706Z  INFO 29543 --- [demojpa] [    Test worker] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+    2026-10-16T22:54:27.771Z  INFO 29543 --- [demojpa] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+    2026-10-16T22:54:27.823Z  INFO 29543 --- [demojpa] [    Test worker] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+    	Database JDBC URL [jdbc:postgresql://ep-fancy-breeze-amz7icm0-pooler.c-5.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require]
+    	Database driver: PostgreSQL JDBC Driver
+    	Database dialect: PostgreSQLDialect
+    	Database version: 17.11
+    	Default catalog/schema: neondb/public
+    	Autocommit mode: undefined/unknown
+    	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+    	JDBC fetch size: none
+    	Pool: DataSourceConnectionProvider
+    	Minimum pool size: undefined/unknown
+    	Maximum pool size: undefined/unknown
+    2026-10-16T22:54:27.915Z  INFO 29543 --- [demojpa] [    Test worker] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+    2026-10-16T22:54:27.916Z  INFO 29543 --- [demojpa] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+    2026-10-16T22:54:28.067Z  WARN 29543 --- [demojpa] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+    2026-10-16T22:54:28.248Z  INFO 29543 --- [demojpa] [    Test worker] p.e.uls.demojpa.DemojpaApplicationTests  : Started DemojpaApplicationTests in 1.063 seconds (process running for 22.667)
+
+Gradle Test Executor 12 finished executing tests.
+2026-10-16T22:54:28.273Z  INFO 29543 --- [demojpa] [ionShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-16T22:54:28.283Z  INFO 29543 --- [demojpa] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-10-16T22:54:28.287Z  INFO 29543 --- [demojpa] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-16T22:54:28.289Z  INFO 29543 --- [demojpa] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-10-16T22:54:28.301Z  INFO 29543 --- [demojpa] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-10-16T22:54:28.314Z  INFO 29543 --- [demojpa] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-16T22:54:28.316Z  INFO 29543 --- [demojpa] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2026-10-16T22:54:28.330Z  INFO 29543 --- [demojpa] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+
+> Task :test FAILED
+
+3 tests completed, 1 failed
+Generating HTML test report...
+Finished generating test html results (0.006 secs) into: /workspaces/repoconstruccion2/demojpa/build/reports/tests/test
+Finished generating test XML results (0.0 secs) into: /workspaces/repoconstruccion2/demojpa/build/test-results/test
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':test'.
+> There were failing tests. See the report at: file:///workspaces/repoconstruccion2/demojpa/build/reports/tests/test/index.html
+
+* Try:
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+
+BUILD FAILED in 25s
+4 actionable tasks: 2 executed, 2 up-to-date
+Some of the file system contents retained in the virtual file system are on file systems that Gradle doesn't support watching. The relevant state was discarded to ensure changes to these locations are properly detected. You can override this by explicitly enabling file system watching.

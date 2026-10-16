@@ -33,11 +33,43 @@ public class ServiceRegistrarPedido {
         List<ResponsePedido.ResponsePedidoItem> lst = new ArrayList<ResponsePedido.ResponsePedidoItem>();
         for (RequestPedidoItem item : pedido.items()) {
             System.out.println(System.currentTimeMillis()+ " INICIO "+ Thread.currentThread().getName());
-            Producto producto = repoProducto.findByIdForUpdate(item.idProducto()).get();
+            Producto producto = null;
+            producto = repoProducto.findByIdForUpdate(item.idProducto()).get();
             System.out.println(
         System.currentTimeMillis()+ " DESPUES DE FIND "+ Thread.currentThread().getName()+ " stock=" + producto.getStock());
             try {
-                Thread.sleep(10000);
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+            System.out.println(System.currentTimeMillis()+ " DESPUES DE SLEEP " + Thread.currentThread().getName());
+            if (producto.getStock() < item.cantidad()) {
+                throw new StockInsuficienteException(
+                        "Stock insuficiente para el producto: " + producto.getNombre() +
+                                ". Disponible: " + producto.getStock() + ", Solicitado: " + item.cantidad());
+            }
+            p.agregarItem(producto, item.cantidad(), item.precioUnitario());
+            lst.add(new ResponsePedido.ResponsePedidoItem(producto.getNombre(), item.cantidad()));
+            producto.setStock(producto.getStock() - item.cantidad());
+            repoProducto.save(producto);
+        }
+        repoPedido.save(p);
+        ResponsePedido respPedido = new ResponsePedido(p.getId(), lst);
+        return respPedido;
+    }
+
+    @Transactional
+    public ResponsePedido registrarPedidoSinLock(RequestPedido pedido) {
+        Pedido p = new Pedido();
+        List<ResponsePedido.ResponsePedidoItem> lst = new ArrayList<ResponsePedido.ResponsePedidoItem>();
+        for (RequestPedidoItem item : pedido.items()) {
+            System.out.println(System.currentTimeMillis()+ " INICIO "+ Thread.currentThread().getName());
+            Producto producto = null;
+            producto = repoProducto.findById(item.idProducto()).get();
+            System.out.println(
+        System.currentTimeMillis()+ " DESPUES DE FIND "+ Thread.currentThread().getName()+ " stock=" + producto.getStock());
+            try {
+                Thread.sleep(2000);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
