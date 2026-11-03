@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
 
 import { NoEncontrado } from './no-encontrado';
 
@@ -8,9 +9,9 @@ describe('NoEncontrado', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NoEncontrado]
-    })
-    .compileComponents();
+      imports: [NoEncontrado],
+      providers: [provideRouter([])]
+    }).compileComponents();
 
     fixture = TestBed.createComponent(NoEncontrado);
     component = fixture.componentInstance;

@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+/* Estilos globales: los colores se definen una sola vez para que todas las vistas sean uniformes */
+:root {
+  --color-primario: #3b6d72;
+  --color-secundario: #deb3f0;
+  --color-acento: #fcb1b1;
+  --color-fondo: #211f40;
+  --color-texto: #2d2a32;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: var(--color-fondo);
+  color: var(--color-texto);
+}
+
+h1 {
+  color: var(--color-primario);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.6rem;
+  background: var(--color-acento);
+  color: #fff;
+  border-radius: 0;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.btn:hover {
+  background: #b71c1c;
+}
