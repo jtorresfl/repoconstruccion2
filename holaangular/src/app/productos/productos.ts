@@ -16,7 +16,7 @@ interface Producto {
   imports: [CurrencyPipe],
   templateUrl: './productos.html',
   styleUrl: './productos.css',
-})
+}) 
 export class Productos {
   productos: Producto[] = [
     { id: 1, nombre: 'Leche entera', marca: 'Gloria', descripcion: 'Caja de 1 litro', precio: 5.2, stock: 120 },

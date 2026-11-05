@@ -32,6 +32,3 @@ h1 {
   font-weight: 600;
   transition: background 0.2s;
 }
-.btn:hover {
-  background: #b71c1c;
-}
