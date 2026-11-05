@@ -1,10 +1,10 @@
-/* Estilos globales: los colores se definen una sola vez para que todas las vistas sean uniformes */
+/* Estilos global */
 :root {
   --color-primario: #3b6d72;
   --color-secundario: #deb3f0;
-  --color-acento: #fcb1b1;
+  --color-acento: #f90101;
   --color-fondo: #211f40;
-  --color-texto: #2d2a32;
+  --color-texto: #000000;
 }
 
 * {

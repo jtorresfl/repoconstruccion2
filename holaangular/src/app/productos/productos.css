@@ -9,7 +9,7 @@ table {
 th,
 td {
   padding: 0.8rem 1rem;
-  border: 1px solid #b9a9d1;
+  border: 1px solid #0e0e0e;
   text-align: left;
 }
 th {
@@ -30,5 +30,5 @@ tbody tr:hover {
 }
 .agotado {
   background: var(--color-acento);
-  color: #fff;
+  color: #ffe9e9;
 }

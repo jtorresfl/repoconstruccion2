@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CurrencyPipe } from '@angular/common';
 
-// Mismos campos que la entidad Producto del backend (demojpa)
+
 interface Producto {
   id: number;
   nombre: string;
