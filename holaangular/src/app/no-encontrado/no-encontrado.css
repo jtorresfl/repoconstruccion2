@@ -7,14 +7,6 @@
   margin: 0;
   color: #ff5252;     
 }
-.error h2 {
-  margin: 0.5rem 0;
-  color: #ffffff;  
-}
-.error p {
-  margin-bottom: 1.5rem;
-  color: #d9d4e6;     
-}
 .error .btn {
   background: #ff5252; 
   color: #ffffff;     
