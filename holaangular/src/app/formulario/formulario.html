@@ -1,0 +1,107 @@
+<h1>Registro de clientes</h1>
+
+<form class="formulario" [formGroup]="form" (ngSubmit)="enviar()" novalidate>
+  <div class="grid">
+    <!-- 1. Texto -->
+    <div class="campo">
+      <label for="nombre">Nombre completo</label>
+      <input id="nombre" type="text" formControlName="nombre" [class.invalido]="error('nombre')" />
+      @if (error('nombre'); as msg) { <small class="error">{{ msg }}</small> }
+    </div>
+
+    <!-- 2. Email -->
+    <div class="campo">
+      <label for="email">Correo electrónico</label>
+      <input id="email" type="email" formControlName="email" [class.invalido]="error('email')" />
+      @if (error('email'); as msg) { <small class="error">{{ msg }}</small> }
+    </div>
+
+    <!-- 3. Teléfono (pattern) -->
+    <div class="campo">
+      <label for="telefono">Teléfono</label>
+      <input id="telefono" type="tel" formControlName="telefono" placeholder="999999999" [class.invalido]="error('telefono')" />
+      @if (error('telefono'); as msg) { <small class="error">{{ msg }}</small> }
+    </div>
+
+    <!-- 4. Número (min / max) -->
+    <div class="campo">
+      <label for="edad">Edad</label>
+      <input id="edad" type="number" formControlName="edad" [class.invalido]="error('edad')" />
+      @if (error('edad'); as msg) { <small class="error">{{ msg }}</small> }
+    </div>
+
+    <!-- 5. Select -->
+    <div class="campo">
+      <label for="distrito">Distrito</label>
+      <select id="distrito" formControlName="distrito" [class.invalido]="error('distrito')">
+        <option value="">-- Selecciona --</option>
+        @for (d of distritos; track d) {
+          <option [value]="d">{{ d }}</option>
+        }
+      </select>
+      @if (error('distrito'); as msg) { <small class="error">{{ msg }}</small> }
+    </div>
+
+    <!-- 6. Radio -->
+    <fieldset class="campo">
+      <legend>Tipo de entrega</legend>
+      <label class="opcion"><input type="radio" value="domicilio" formControlName="entrega" /> A domicilio</label>
+      <label class="opcion"><input type="radio" value="recojo" formControlName="entrega" /> Recojo en tienda</label>
+      @if (error('entrega'); as msg) { <small class="error">{{ msg }}</small> }
+    </fieldset>
+
+    <!-- 7. Textarea (maxlength) -->
+    <div class="campo completo">
+      <label for="comentarios">Comentarios (opcional)</label>
+      <textarea id="comentarios" rows="3" formControlName="comentarios" [class.invalido]="error('comentarios')"></textarea>
+      <small class="contador">{{ form.controls.comentarios.value?.length ?? 0 }}/100</small>
+      @if (error('comentarios'); as msg) { <small class="error">{{ msg }}</small> }
+    </div>
+
+    <!-- 8. Checkbox -->
+    <div class="campo completo">
+      <label class="opcion">
+        <input type="checkbox" formControlName="terminos" /> Acepto los términos y condiciones
+      </label>
+      @if (error('terminos'); as msg) { <small class="error">{{ msg }}</small> }
+    </div>
+  </div>
+
+  <button type="submit" class="btn-enviar" [disabled]="form.invalid">Registrar cliente</button>
+</form>
+
+<h2>Clientes registrados</h2>
+<div class="tabla-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Teléfono</th>
+        <th>Edad</th>
+        <th>Distrito</th>
+        <th>Entrega</th>
+        <th>Comentarios</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (c of clientes(); track c.id) {
+        <tr>
+          <td>{{ c.id }}</td>
+          <td>{{ c.nombre }}</td>
+          <td>{{ c.email }}</td>
+          <td>{{ c.telefono }}</td>
+          <td>{{ c.edad }}</td>
+          <td>{{ c.distrito }}</td>
+          <td>{{ c.entrega === 'domicilio' ? 'A domicilio' : 'Recojo en tienda' }}</td>
+          <td>{{ c.comentarios }}</td>
+          <td><button type="button" class="btn-eliminar" (click)="eliminar(c.id)">Quitar</button></td>
+        </tr>
+      } @empty {
+        <tr><td colspan="9" class="vacio">Aún no hay clientes registrados.</td></tr>
+      }
+    </tbody>
+  </table>
+</div>

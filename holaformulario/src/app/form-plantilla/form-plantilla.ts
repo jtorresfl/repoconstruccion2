@@ -1,21 +1,30 @@
-import { Component } from '@angular/core';
-import { NgForm, FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { Component, signal } from '@angular/core';
+import { FormsModule, NgForm } from '@angular/forms';
+
+interface Estudiante {
+  nombre: string;
+  apellido: string;
+  dni: string;
+  numero: string;
+  email: string;
+  sexo: string;
+  edad: number;
+  universidad: string;
+  juego: string;
+}
 
 @Component({
   selector: 'app-form-plantilla',
-  imports: [CommonModule,FormsModule],
+  imports: [FormsModule],
   templateUrl: './form-plantilla.html',
   styleUrl: './form-plantilla.css',
 })
 export class FormPlantilla {
+  universidades = ['ULASALLE', 'UNSA', 'UCSM', 'UTP', 'UCSP'];
+  estudiantes = signal<Estudiante[]>([]);
 
   onSubmit(form: NgForm) {
-    console.log('Data del formulario:', form.value);
-    let obj=form.value;
-    console.log('Nombre:',obj.nombre);
-    console.log('Email:',obj.email);
-    console.log('Nombre:',obj["nombre"]);
-    console.log('Email:',obj["email"]);
+    this.estudiantes.update((lista) => [...lista, form.value as Estudiante]);
+    form.resetForm();
   }
 }

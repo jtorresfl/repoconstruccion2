@@ -1,22 +1,115 @@
-<form #miForm="ngForm" (ngSubmit)="onSubmit(miForm)">
+<h1>Registro de personas</h1>
 
-<div>
+<form #miForm="ngForm" (ngSubmit)="onSubmit(miForm)">
+  <div>
     <label for="nombre">Nombre</label>
-    <input type="text" id="nombre" name="nombre" ngModel required>
+    <input type="text" id="nombre" name="nombre" ngModel required minlength="2" #nombre="ngModel" />
+    @if (nombre.invalid && nombre.touched) {
+      <small class="error">
+        @if (nombre.errors?.['required']) { Nombre es obligatorio } @else { minimo 2 letras }
+      </small>
+    }
   </div>
 
-<div>
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" ngModel email required>  
-</div>
+  <div>
+    <label for="apellido">Apellido</label>
+    <input type="text" id="apellido" name="apellido" ngModel required #apellido="ngModel" />
+    @if (apellido.invalid && apellido.touched) {
+      <small class="error">Apellido es obligatorio</small>
+    }
+  </div>
 
-<div>
+  <div>
+    <label for="dni">DNI</label>
+    <input type="text" id="dni" name="dni" ngModel required pattern="[0-9]{8}" #dni="ngModel" />
+    @if (dni.invalid && dni.touched) {
+      <small class="error">
+        @if (dni.errors?.['required']) { DNI es obligatorio } @else { El DNI debe tener 8 dígitos }
+      </small>
+    }
+  </div>
+
+    <div>
+    <label for="numero">Celular</label>
+    <input type="text" id="numero" name="numero" ngModel required pattern="[0-9]{9}" #numero="ngModel" />
+    @if (numero.invalid && numero.touched) {
+      <small class="error">
+        @if (numero.errors?.['required']) { El numero es obligatorio } @else { No hay numero de mas de 9 }
+      </small>
+    }
+  </div>
+
+  <div>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" ngModel required email #email="ngModel" />
+    @if (email.invalid && email.touched) {
+      <small class="error">
+        @if (email.errors?.['required']) { email obligatorio} @else { email no valido }
+      </small>
+    }
+  </div>
+
+  <div>
+    <label>Sexo</label>
+    <label class="opcion"><input type="radio" name="sexo" value="Masculino" ngModel required #sexo="ngModel" /> Masculino</label>
+    <label class="opcion"><input type="radio" name="sexo" value="Femenino" ngModel required /> Femenino</label>
+    @if (sexo.invalid && sexo.touched) {
+      <small class="error">Selecciona una opcion</small>
+    }
+  </div>
+
+  <div>
     <label for="edad">Edad</label>
-    <input id="edad" name="edad" ngModel required type="number" min="18" #edad="ngModel">  
-    <div *ngIf="edad && edad.invalid && edad.touched">
-    <div *ngIf="edad.errors?.['required']">Edad es obligatorio</div>
-    <div *ngIf="edad.errors?.['min']">Minimo no válido</div>
-    </div>
-</div>
-<button type="submit" [disabled]="miForm.invalid">Enviar</button> 
+    <input type="number" id="edad" name="edad" ngModel required min="16" max="90" #edad="ngModel" />
+    @if (edad.invalid && edad.touched) {
+      <small class="error">
+        @if (edad.errors?.['required']) { edad obligatoria }
+        @else if (edad.errors?.['min']) { La edad minima es 18 }
+        @else { superaste la edad maxima }
+      </small>
+    }
+  </div>
+
+  <div>
+    <label for="universidad">Universidad</label>
+    <select id="universidad" name="universidad" ngModel required #universidad="ngModel">
+      <option value="" disabled>Selecciona una de las opciones</option>
+      @for (u of universidades; track u) {
+        <option [value]="u">{{ u }}</option>
+      }
+    </select>
+    @if (universidad.invalid && universidad.touched) {
+      <small class="error">Selecciona una universidad</small>
+    }
+  </div>
+
+  <div>
+    <label for="juego">Juego favorito</label>
+    <textarea id="juego" name="juego" rows="2" ngModel required maxlength="50" #juego="ngModel"></textarea>
+    @if (juego.invalid && juego.touched) {
+      <small class="error">Juego favorito es obligatorio</small>
+    }
+  </div>
+
+  <button type="submit" [disabled]="miForm.invalid">Enviar</button>
 </form>
+
+<h2>Personas registradas</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th><th>Apellido</th><th>DNI</th><th>Email</th>
+      <th>Sexo</th><th>Edad</th><th>Universidad</th><th>Juego favorito</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (e of estudiantes(); track $index) {
+      <tr>
+        <td>{{ e.nombre }}</td><td>{{ e.apellido }}</td><td>{{ e.dni }}</td><td>{{ e.email }}</td>
+        <td>{{ e.sexo }}</td><td>{{ e.edad }}</td><td>{{ e.universidad }}</td><td>{{ e.juego }}</td>
+      </tr>
+    } @empty {
+      <tr><td colspan="8">Sin registros</td></tr>
+    }
+  </tbody>
+</table>

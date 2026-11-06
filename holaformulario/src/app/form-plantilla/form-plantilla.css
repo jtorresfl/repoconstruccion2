@@ -1,0 +1,70 @@
+:host {
+  display: block;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: Arial, sans-serif;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 0.8rem;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='number'],
+select,
+textarea {
+  padding: 0.5rem;
+  border: 1px solid #888;
+}
+
+.opcion {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Errores de validación */
+.error {
+  color: #d00000;
+  font-weight: bold;
+}
+input.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+  border-color: #d00000;
+  background: #fff0f0;
+}
+
+/* Botón */
+button {
+  padding: 0.6rem 1.5rem;
+  background: #1565c0;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+}
+button:disabled {
+  background: #b0b0b0;
+  cursor: not-allowed;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+}
+th,
+td {
+  border: 1px solid #333;
+  padding: 0.5rem;
+  text-align: left;
+}
+th {
+  background: #1565c0;
+  color: #fff;
+}
