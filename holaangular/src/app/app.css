@@ -4,18 +4,3 @@
   padding: 0 1rem;
   min-height: 90vh;
 }
-
-.menu {
-  display: flex;
-  gap: 1.5rem;
-  padding: 1rem 2rem;
-  background: var(--color-primario);
-}
-.menu a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-}
-.menu a.activo {
-  border-bottom: 2px solid var(--color-secundario);
-}
