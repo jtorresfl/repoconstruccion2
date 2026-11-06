@@ -1,0 +1,22 @@
+<form #miForm="ngForm" (ngSubmit)="onSubmit(miForm)">
+
+<div>
+    <label for="nombre">Nombre</label>
+    <input type="text" id="nombre" name="nombre" ngModel required>
+  </div>
+
+<div>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" ngModel email required>  
+</div>
+
+<div>
+    <label for="edad">Edad</label>
+    <input id="edad" name="edad" ngModel required type="number" min="18" #edad="ngModel">  
+    <div *ngIf="edad && edad.invalid && edad.touched">
+    <div *ngIf="edad.errors?.['required']">Edad es obligatorio</div>
+    <div *ngIf="edad.errors?.['min']">Minimo no válido</div>
+    </div>
+</div>
+<button type="submit" [disabled]="miForm.invalid">Enviar</button> 
+</form>
