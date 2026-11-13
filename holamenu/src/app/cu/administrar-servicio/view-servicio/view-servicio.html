@@ -1,0 +1,41 @@
+<h2>Lista de servicios</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Servicio</th>
+      <th>Descripción</th>
+      <th>Precio</th>
+      <th>Estado</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    @for (servicio of servicios; track servicio.id) {
+      <tr>
+        <td>{{ servicio.id }}</td>
+        <td>{{ servicio.nombre }}</td>
+        <td>{{ servicio.descripcion }}</td>
+        <td>{{ servicio.precio }}</td>
+        <td>{{ servicio.activo ? 'Activo' : 'Inactivo' }}</td>
+        <td>
+          <button (click)="editarServicio(servicio)">Editar</button>
+        </td>
+      </tr>
+    } @empty {
+      <tr>
+        <td colspan="6">No hay servicios disponibles</td>
+      </tr>
+    }
+  </tbody>
+</table>
+
+@if (mostrarModal) {
+  <app-modal-servicio
+    [servicio]="servicioSeleccionado"
+    (guardar)="guardarServicio($event)"
+    (cerrar)="cerrarModal()">
+  </app-modal-servicio>
+}

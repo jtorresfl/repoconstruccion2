@@ -1,0 +1,18 @@
+<header>
+  <nav class="navbar">
+    <span class="menu-toggle" (click)="toggleMenu()">☰</span>
+    <span class="logo">MiSitio</span>
+   <ul class="nav-links" [class.active]="menuAbierto">
+  <li>
+    <a routerLink="/productos" (click)="menuAbierto = false">Productos</a>
+  </li>
+  <li>
+    <a routerLink="/servicios" (click)="menuAbierto = false">Servicios</a>
+  </li>
+  <li>
+    <a routerLink="/productos" (click)="menuAbierto = false">Contacto</a>
+  </li>
+</ul>
+  </nav>
+</header>
+<router-outlet />

@@ -1,0 +1,20 @@
+<div class="modal">
+  <div class="modal-content">
+
+    <h2>Editar producto</h2>
+
+    <form #miForm="ngForm" (ngSubmit)="onGuardar(miForm)">
+      <label>Nombre:</label>
+      <input type="text" [(ngModel)]="producto()!.nombre" name="nombre" >
+
+      <label>Precio:</label>
+      <input type="number" [(ngModel)]="producto()!.precio" name="precio" >
+
+      <div class="botones">
+        <button type="button" (click)="cerrar.emit()">Cancelar</button>
+        <button type="submit">Guardar</button>
+      </div>
+    </form>
+
+  </div>
+</div>
