@@ -39,8 +39,10 @@ public class ServiceAdministrarProductos {
         return toResponse(repoProducto.save(p));
     }
 
-    private ResponseProducto toResponse(Producto p) {
-        return new ResponseProducto(p.getId(), p.getNombre(), p.getPrecio(),
-            p.getStock(), p.getDescripcion(), p.getMarca().getNombre());
-    }
+   private ResponseProducto toResponse(Producto p) {
+    String nombreMarca = (p.getMarca() != null) ? p.getMarca().getNombre() : null;
+    return new ResponseProducto(p.getId(), p.getNombre(), p.getPrecio(),
+        p.getStock(), p.getDescripcion(), nombreMarca);
+}
+    
 }
