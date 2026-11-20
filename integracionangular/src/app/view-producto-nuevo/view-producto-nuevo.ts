@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { NgForm, FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ServiceAdministrarProductos } from '../services/service-administrar-productos';
 
 @Component({
@@ -9,8 +10,8 @@ import { ServiceAdministrarProductos } from '../services/service-administrar-pro
   styleUrl: './view-producto-nuevo.css',
 })
 export class ViewProductoNuevo {
-
   private serviceAdministrarProductos = inject(ServiceAdministrarProductos);
+  private router = inject(Router);
 
   producto = {
     nombre: '',
@@ -20,19 +21,16 @@ export class ViewProductoNuevo {
   };
 
   guardar(): void {
-    console.log('Producto a guardar:', this.producto);
     this.serviceAdministrarProductos.registrarProducto(this.producto).subscribe({
-        next: (data) => console.log('Datos recibidos del servicio:', data),
-        error: (err) => console.error('Error al llamar al servicio:', err),
+      next: (data) => {
+        console.log('Producto registrado:', data);
+        this.router.navigate(['/productos']);
+      },
+      error: (err) => console.error('Error al llamar al servicio:', err),
     });
   }
 
   limpiar(): void {
-    this.producto = {
-      nombre: '',
-      precio: 0,
-      stock: 0,
-      descripcion: ''
-    };
+    this.producto = { nombre: '', precio: 0, stock: 0, descripcion: '' };
   }
 }

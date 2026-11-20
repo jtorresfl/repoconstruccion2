@@ -1,6 +1,5 @@
-import { Component} from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { Router } from '@angular/router';
-import { inject, Injectable } from '@angular/core';
 import { ServiceAdministrarProductos } from '../services/service-administrar-productos';
 
 @Component({
@@ -9,25 +8,20 @@ import { ServiceAdministrarProductos } from '../services/service-administrar-pro
   templateUrl: './view-productos.html',
   styleUrl: './view-productos.css',
 })
-export class ViewProductos {
-
+export class ViewProductos implements OnInit {
   private router = inject(Router);
-
-  productos!: any[];
-
-  mostrarModal = false;
-
   private serviceAdministrarProductos = inject(ServiceAdministrarProductos);
+
+  productos = signal<any[]>([]);
 
   ngOnInit(): void {
     this.serviceAdministrarProductos.getProductos().subscribe({
-    next: (data) => console.log('Datos recibidos del servicio:', data),
-    error: (err) => console.error('Error al llamar al servicio:', err),
+      next: (data) => this.productos.set(data),
+      error: (err) => console.error('Error al llamar al servicio:', err),
     });
   }
 
-irAProductoNuevo() {
-  this.router.navigate(['/producto/nuevo']);
-}
-
+  irAProductoNuevo(): void {
+    this.router.navigate(['/producto/nuevo']);
+  }
 }

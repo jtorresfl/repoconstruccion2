@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  apiUrl: 'https://friendly-capybara-q7pxjppw6xwq3x79g.github.dev/'
+  apiUrl: 'https://silver-waddle-v6wpxj9rjpjpfwjj5-8080.app.github.dev'
 };
